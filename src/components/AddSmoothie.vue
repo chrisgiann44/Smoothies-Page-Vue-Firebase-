@@ -6,6 +6,10 @@
                 <label for="title">Smoothie Title:</label>
                 <input type="text" name="title" v-model="title" />
             </div>
+            <div v-for="(ing,index) in ingredients" :key="index">
+                <label for="ingredient">ingredient</label>
+                <input type="text" name="ingredient" v-model="ingredients[index]" />
+            </div>
             <div class="field add-ingredient">
                 <label for="add-ingredient">Add an ingredient:</label>
                 <input @keydown.tab="addIng" v-model="another" type="text" name="add-ingredient" />
@@ -30,7 +34,9 @@ export default {
         };
     },
     methods: {
-        AddSmoothie() {},
+        AddSmoothie() {
+            console.log(this.ingredients);
+        },
         addIng() {
             if (this.another) {
                 this.ingredients.push(this.another);
