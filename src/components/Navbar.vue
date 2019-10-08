@@ -31,6 +31,10 @@ export default {
     align-items: center;
 }
 
+.material-icon {
+    align-self: a;
+}
+
 .btn-floating {
     margin-right: 1em;
 }
